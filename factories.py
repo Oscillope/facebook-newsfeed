@@ -176,6 +176,7 @@ class LocationFactory(object):
 	@staticmethod
 	def make_location(loc_json):
 		if loc_json:
+			print loc_json
 			street = loc_json.get("street")
 			city = loc_json.get("city")
 			state = loc_json.get("state")

@@ -1,3 +1,5 @@
+#!/usr/bin/python2
+
 import json
 import shlex
 import time
@@ -6,6 +8,7 @@ import facebook
 import login as fblogin
 import feed as fbfeed
 import errors
+import sys
 
 feed = None
 last_cmd = None
@@ -71,5 +74,5 @@ if __name__ == "__main__":
 		print "\nClosing the Facebook Newsreader."
 		cleanup(config,token)
 	except:
-		print "An unknown error has occurred, so the application will now exit."
+		print "An unknown error has occurred, so the application will now exit.",sys.exc_info()[0]
 		exit(1)

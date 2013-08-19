@@ -1,7 +1,7 @@
 facebook-newsfeed
 =================
 
-A minimalistic command line Facebook Newsfeed reader.
+A minimalistic command line Facebook Newsfeed reader. I've also been working on a simple text-based UI for it.
 
 I started this project when Facebook completely forgot how to give me posts in chronological order, completely destroying my flow and usage of their product. SO I set out to make a command line Facebook Newsreader app to get around this issue and to decrease the amount of time I had to spend on their site.
 
@@ -19,6 +19,8 @@ So have at it. If you want to make this better, feel free. I'm not putting any m
 
 ## Requirements
 Python 2.7: http://www.python.org/download/
+
+npyscreen >= 2.0pre77: http://code.google.com/p/npyscreen/
 
 The Facebook SDK for Python: https://github.com/pythonforfacebook/facebook-sdk/blob/master/facebook.py
 

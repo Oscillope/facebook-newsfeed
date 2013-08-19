@@ -1,15 +1,15 @@
-import urwid
-
-def exit_on_q(key):
-	if key in ('q', 'Q'):
-		raise urwid.ExitMainLoop()
+import npyscreen
+class Facebook(npyscreen.NPSApp):
+	def main(self):
+		form = npyscreen.FormBaseNew(name = "Facebook")
+		post = form.add(npyscreen.TitleText, name = "Post:")
+		postbn = form.add(PostPress, name = "Post!")
+		form.edit()
 		
-palette = [
-	('bg', 'white', 'black'),]
-	
-bottom = urwid.Text(('bg', u"Post	Reload"), align='left')
-map1 = urwid.AttrMap(bottom, 'bg')
-fill = urwid.Filler(map1)
-map2 = urwid.AttrMap(fill, 'bg')
-loop = urwid.MainLoop(map2, palette, unhandled_input=exit_on_q)
-loop.run()
+class PostPress(npyscreen.ButtonPress):
+	def whenPressed(self):
+		popup = npyscreen.notify_confirm("Posted!", title="Status", wide=False, editw=1)
+
+if __name__ == "__main__":
+	App = Facebook()
+	App.run()
